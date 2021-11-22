@@ -4,9 +4,13 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import com.example.contatosapi.enums.EmpresaTipo;
 
 @Entity
 public class Empresa {
@@ -17,7 +21,8 @@ public class Empresa {
 	private Long id;
 	
 	@Column(name="tipo", nullable = false)
-	private int tipo;
+	@Enumerated(EnumType.ORDINAL)
+	private EmpresaTipo tipo;
 	
 	@Column(name="nome", nullable = false)
 	private String nome;
@@ -46,19 +51,19 @@ public class Empresa {
 	@Column(name="enderecoCep")
 	private String enderecoCep;
 	
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public int getTipo() {
-		return tipo;
+	public String getTipo() {
+		return tipo.getValue();
 	}
 
-	public void setTipo(int tipo) {
+	public void setTipo(EmpresaTipo tipo) {
 		this.tipo = tipo;
 	}
 

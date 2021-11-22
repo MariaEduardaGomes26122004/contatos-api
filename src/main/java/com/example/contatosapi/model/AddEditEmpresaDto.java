@@ -3,7 +3,7 @@ package com.example.contatosapi.model;
 import java.util.Date;
 
 public class AddEditEmpresaDto {
-	private int tipo;
+	private String tipo;
 	private String nome;
 	private String telefone;
 	private String endereco;
@@ -15,10 +15,11 @@ public class AddEditEmpresaDto {
 	private String enderecoCep;
 	private Date createdAt;
 	
-	public int getTipo() {
+	
+	public String getTipo() {
 		return tipo;
 	}
-	public void setTipo(int tipo) {
+	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
 	public String getNome() {
